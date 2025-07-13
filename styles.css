@@ -1,0 +1,603 @@
+body {
+    font-family:"Manrope", sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(222, 211, 223);
+}
+
+ a{
+    text-decoration: none;
+ }
+.nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #4e345e;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.6s;
+}
+
+.nav a {
+    display: block;
+    padding: 20px 30px;
+    font-size: 25px;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-family: "Manrope", sans-serif;
+}
+
+.nav a:hover {
+    color: #a454ff;
+    transition: 0.4s;
+}
+
+.nav .close {
+    position: absolute;
+    top: 0;
+    right: 22px;
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+.slide a {
+    color: #000;
+    font-size: 36px;
+}
+
+#content {
+    padding: 20px;
+    transition: margin-left 0.6s;
+    overflow: hidden;
+}
+
+footer{
+    display: flex;
+    background-color: #1f0033c0;
+    justify-content: center;
+    font-family:"Manrope", sans-serif;
+    font-size: 1rem;
+    color: #F2F2F2;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.1)),
+                url('assets/fondo.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 100px 20px 50px;
+    color: #fff;
+}
+
+.hero-content {
+    max-width: fit-content;
+    margin:auto;
+    z-index: 2;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: "Manrope", sans-serif;
+    color: #2e014d;
+}
+
+.hero-meta {
+    font-size: 0.9rem;
+    color: #5d138f;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: "Manrope", sans-serif;
+}
+.hero-meta1 {
+    font-size: 1.2rem;
+    color: #5d138f;
+    margin-bottom: 20px;
+    font-family: "Manrope", sans-serif;
+}
+
+.hero-body {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    color: #2e014d;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+main#content {
+    padding: 0;
+    margin: 0;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.galeria div {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f4f4f4;
+}
+
+.galeria div:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Botones */
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #cb7dffc0;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.7rem 1.2rem;
+  font-family:"Manrope", sans-serif; ;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background 0.3s ease;
+  color:#000000;
+}
+
+.lightbox-btn:hover {
+  background: #f1d5f5;
+}
+
+.lightbox-btn.prev {
+  left: 2vw;
+}
+
+.lightbox-btn.next {
+  right: 2vw;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.project-card {
+  background-color: #b78cfc81;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+}
+
+.project-card:hover,
+.project-card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h3 {
+  margin: 16px 16px 8px;
+  font-size: 1.25rem;
+  color: #2e014d;
+  font-family:"Manrope", sans-serif ;
+}
+
+.project-card p {
+  margin: 0 16px 20px;
+  font-size: 0.95rem;
+  color:  #2e014d;
+  font-family:"Manrope", sans-serif ;
+}
+
+.tproyecto{
+    text-align: center;
+    margin-bottom: 0%;
+    color:#2e014d;
+    font-size: 1.3rem;
+    font-weight:400;
+}
+
+.thome{
+    font-weight:8px;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.input-container input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif;
+}
+
+.input-container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #1f0033c0;;
+  color: white;
+  border:none;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.input-container button:hover {
+  background: #31004fc0; 
+  transform: scale(1.05); 
+}
+.lista-tareas {
+  max-width: 600px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.lista-tareas li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-tareas li.completada span {
+  text-decoration: line-through;
+  color: rgba(79, 3, 102, 0.575);
+}
+
+.lista-tareas .acciones button {
+  margin-left: 5px;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.calculadora {
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 350px;
+  width: 100%;
+}
+
+.calculadora .visor {
+  background: #1f0033c0;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  min-height: 60px;
+  box-sizing: border-box;
+}
+
+.calculadora .input {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.calculadora .resultado {
+  font-size: 1.8rem;
+  font-weight:700;
+}
+
+
+.calculadora .botones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.calculadora .botones button {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  background: #ffffff;
+  border: 2px solid #1f0033c0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.calculadora .botones button:hover {
+  background: #320650c0;
+  color: white;
+  border-color: #1f0033c0;
+}
+
+.proyecto3{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2rem 1rem;
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; 
+  margin-bottom: 2%;
+  margin-top: 0%;
+}
+
+.info-box {
+  background-color: #b78cfc81;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.info-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.info-box h3 {
+  margin-bottom: 0.8rem;
+  color: #2e014d;
+  font-family:"Manrope", sans-serif ;
+}
+
+.info-box p {
+  color:  #2e014d;
+  font-family:"Manrope", sans-serif ;
+  line-height: 1.4;
+}
+
+.contacto{
+ max-width: 500px;
+ margin: auto;
+ background-color: #b78cfc81;
+ padding: 30px;
+ border-radius: 20px;
+ font-family:"Manrope", sans-serif;
+ margin-top: 2%;
+ margin-bottom: 2%;
+
+}
+
+form#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form#contact-form label {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #2e014d;
+  font-family: "Manrope", sans-serif;
+}
+
+form#contact-form input,
+form#contact-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1.5px ;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  resize: vertical;
+  font-family: "Manrope", sans-serif;
+}
+
+form#contact-form input:focus,
+form#contact-form textarea:focus {
+  border-color: #444;
+  outline: none;
+}
+
+form#contact-form textarea {
+  min-height: 100px;
+  max-height: 100px;
+}
+
+form#contact-form button[type="submit"] {
+  background-color: #403a49;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  font-family:"Manrope", sans-serif; 
+}
+
+form#contact-form button[type="submit"]:hover {
+  background-color: #41118f;
+}
+
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 2rem auto 1rem auto;
+  gap: 1rem;
+
+}
+
+.nav-buttons button {
+  padding: 10px 20px;
+  background-color: #403a49;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Manrope", sans-serif ;
+}
+
+.nav-buttons button:hover {
+  background-color: #41118f;
+}
+
+.inicio{
+  opacity: 0;
+  transform: translateY(20px); 
+  animation: subir 1s ease-out forwards;
+  transition: color 0.3s ease;
+    }
+.inicio hover{
+      color: purple;
+      font-weight: bold;
+      cursor: pointer;
+}
+
+  @keyframes subir {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+.hero-meta{
+  opacity: 0;
+  transform: translateY(20px);
+  animation: subir 1s ease-out forwards;
+  transition: color 0.3s ease;
+}
+
+.hero-meta hover{
+    color: purple;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-conoceme-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto 3rem auto;
+}
+
+.btn-conoceme {
+  padding: 14px 28px;
+  background-color: #9c27b0;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-conoceme:hover {
+  background-color: #7b1fa2;
+  transform: scale(1.05);
+}
+
+.volver-proyectos {
+  display: inline-block;
+  margin: 2rem auto;
+  padding: 0.6rem 1.4rem;
+  background-color: #3f3451;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.volver-proyectos {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.volver-proyectos:hover {
+  background-color: #41118f; 
+}
